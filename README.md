@@ -105,6 +105,15 @@ root@cam-3630:~/work#
 Execute the following command when logging in to the container for the first time.
 ```bash
 apt-get update && apt-get upgrade -y
+#If v1.5.0, download and update cndev
+#ftp://username@download.cambricon.com:8821/download/demo/easydk/cndev1.14.2-0907.tar.gz
+#tar zxvf cndev1.14.2-0907.tar.gz
+#rm /usr/local/neuware/lib64/libcndev.so
+#cp ./cndev1.14.2/libcndev.so.1.14.2 /usr/local/neuware/lib64/
+#ls -la /usr/local/neuware/lib64/
+#cd /usr/local/neuware/lib64/
+#ln -s libcndev.so.1.14.2 libcndev.so
+#ls -la
 ```
 
 ## Test ##

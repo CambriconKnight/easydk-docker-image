@@ -104,15 +104,69 @@ root@cam-3630:~/work#
 ## Update ##
 Execute the following command when logging in to the container for the first time.
 ```bash
-#更新软件列表、更新软件
 apt-get update && apt-get upgrade -y
-#设置环境变量
-echo $LD_LIBRARY_PATH
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/neuware/lib64
-echo $LD_LIBRARY_PATH
 ```
 
 ## Test ##
 ```bash
-
+echo ${EASYDK_DIR}
+export EASYDK_DIR=/root/work
+echo ${EASYDK_DIR}
+echo $LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/neuware/lib64
+echo $LD_LIBRARY_PATH
+cd ${EASYDK_DIR}/samples/stream-app/
+./run.sh MLU270
+```
+```bash
+root@cam-3630:~/work/samples/stream-app# cd ~/work/
+root@cam-3630:~/work# ls
+3rdparty        CPPLINT.cfg  README.md     build  docs     infer_server  samples  tests
+CMakeLists.txt  LICENSE      README_cn.md  cmake  include  lib           src      tools
+root@cam-3630:~/work# cd samples/stream-app/
+root@cam-3630:~/work/samples/stream-app# ./run.sh MLU270
+~/work/samples/stream-app ~/work/samples/stream-app
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I1110 05:26:52.060737 12104 model_loader.cpp:162] Load model from file: ../data/models/MLU270/resnet34_ssd.cambricon
+I1110 05:26:52.086546 12104 model_loader.cpp:189] Load function from offline model succeeded
+CNRT: 4.6.0 e158c88
+I1110 05:26:52.094398 12104 mlu_context.cpp:99] Cambricon runtime init success.
+I1110 05:26:52.094444 12104 easy_infer.cpp:79] Init inference context, device id: 0
+I1110 05:26:52.121914 12104 easy_infer.cpp:97] Create MLU task queue from runtime context
+I1110 05:26:52.122318 12104 easy_decode.cpp:947] CNCodec Version: 1.7.0
+param                           value
+-------------------------------------
+Codectype                       2
+Instance                        4294967295
+DeviceID                        0
+MemoryAllocate                  0
+PixelFormat                     1
+Progressive                     1
+Width                           1920
+Height                          1080
+BitDepthMinus8                  0
+InputBufferNum                  6
+OutputBufferNum                 6
+-------------------------------------
+Invalid UE golomb code
+Invalid UE golomb code
+Invalid UE golomb code
+Invalid UE golomb code
+Invalid UE golomb code
+I1110 05:26:52.172127 12108 easy_decode.cpp:657] Receive sequence
+I1110 05:26:52.182080 12104 mlu_context.cpp:170] Get Core Version MLU270
+I1110 05:26:52.182121 12104 resize_and_colorcvt.cpp:171] Init ResizeAndConvert Operator, [batchsize: 1], [core_number: 4].
+I1110 05:26:58.324442 12102 easy_decode.cpp:853] Thread id: 140559313987200,Feed EOS data
+End Of Stream
+Clear ffmpeg resources
+I1110 05:26:58.861109 12105 easy_decode.cpp:700] Thread id: 140558691555072,Received EOS from cncodec
+I1110 05:26:58.903738 12104 easy_decode.cpp:340] Stop video decoder channel
+I1110 05:26:58.904328 12104 easy_decode.cpp:346] Destroy video decoder channel
+I1110 05:26:58.942287 12104 mlu_context.cpp:51] Destroy MLU task queue
+I1110 05:26:58.943362 12104 model_loader.cpp:417] Destroy neural network function
+I1110 05:26:58.943378 12104 model_loader.cpp:422] Unload offline model
+run stream app SUCCEED!!!
+I1110 05:26:58.945845 12102 mlu_context.cpp:82] Cambricon runtime destroy
+~/work/samples/stream-app
+root@cam-3630:~/work/samples/stream-app#
 ```

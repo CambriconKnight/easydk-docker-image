@@ -46,7 +46,7 @@ RUN echo deb http://mirrors.aliyun.com/ubuntu/ xenial main restricted  > /etc/ap
     echo deb http://mirrors.aliyun.com/ubuntu/ xenial-security main restricted >> /etc/apt/sources.list && \
     echo deb http://mirrors.aliyun.com/ubuntu/ xenial-security universe  >> /etc/apt/sources.list && \
     echo deb http://mirrors.aliyun.com/ubuntu/ xenial-security multiverse >> /etc/apt/sources.list && \
-    apt-get update && apt-get upgrade -y && apt-get install -y --no-install-recommends \
+    apt-get update --fix-missing && apt-get upgrade -y && apt-get install -y --no-install-recommends \
             curl git wget vim build-essential make cmake ca-certificates nasm yasm \
             openssh-server libgoogle-glog-dev libgflags-dev libopencv-dev libcurl4-openssl-dev \
             net-tools && \

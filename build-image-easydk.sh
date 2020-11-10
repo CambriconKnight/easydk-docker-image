@@ -15,15 +15,19 @@ red="\033[0;31m"
 yellow="\033[1;33m"
 
 ##0.copy your easydk into the directory
-if [ ! -d "${PATH_EASYDK_MLU}" ];then
+if [ -d "${PATH_EASYDK_MLU}" ];then
     echo "Directory(${PATH_EASYDK_MLU}): Exists!"
 else
     echo -e "${red}Directory(${PATH_EASYDK_MLU}): Not exist!${none}"
     echo -e "${yellow}Copy your easydk into the directory[easydk-docker-image]!${none}"
-    echo -e "${yellow}eg:cp -v /data/ftp/demo/easydk ./${none}"
+    echo -e "${yellow}eg:cp -r /data/ftp/demo/easydk ./${none}"
     #Manual copy
-    #cp -v /data/ftp/demo/easydk ./
+    #cp -r /data/ftp/demo/easydk ./
     exit -1
+fi
+if [ -d "${PATH_EASYDK_MLU}/build" ];then
+    echo "Directory(${PATH_EASYDK_MLU}/build): Exists! Remove......"
+    rm -rf ${PATH_EASYDK_MLU}/build
 fi
 
 ##copy your neuware package into the directory of easydk

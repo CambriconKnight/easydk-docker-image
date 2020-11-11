@@ -18,7 +18,25 @@ Build docker images for [easydk](https://github.com/Cambricon/CNStream/tree/mast
 git clone https://github.com/CambriconKnight/easydk-docker-image.git
 ```
 ```bash
-
+cam@cam-3630:/data/github$ git clone https://github.com/CambriconKnight/easydk-docker-image.git
+Cloning into 'easydk-docker-image'...
+remote: Enumerating objects: 24, done.
+remote: Counting objects: 100% (24/24), done.
+remote: Compressing objects: 100% (17/17), done.
+remote: Total 24 (delta 11), reused 20 (delta 7), pack-reused 0
+Unpacking objects: 100% (24/24), done.
+Checking connectivity... done.
+cam@cam-3630:/data/github$ ls -la easydk-docker-image
+total 36
+drwxrwxr-x 3 cam cam 4096 11月 11 10:39 .
+drwxrwxr-x 9 cam cam 4096 11月 11 10:38 ..
+-rwxrwxr-x 1 cam cam 1855 11月 11 10:39 build-image-easydk.sh
+-rwxrwxr-x 1 cam cam 3396 11月 11 10:39 Dockerfile
+drwxrwxr-x 8 cam cam 4096 11月 11 10:39 .git
+-rwxrwxr-x 1 cam cam  682 11月 11 10:39 load-image-easydk.sh
+-rw-rw-r-- 1 cam cam 7166 11月 11 10:39 README.md
+-rwxrwxr-x 1 cam cam 1591 11月 11 10:39 run-container-easydk.sh
+cam@cam-3630:/data/github$
 ```
 
 ## Build ##

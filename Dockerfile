@@ -63,4 +63,3 @@ RUN dpkg -i /root/work/$neuware_package && \
     rm -rf /root/work/$neuware_package
 
 WORKDIR /root/work/
-

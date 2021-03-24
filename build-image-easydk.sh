@@ -44,8 +44,8 @@ fi
 
 #1.build image
 echo "====================== build image ======================"
-docker build -f ./Dockerfile --build-arg neuware_version=${neuware_version} -t $NAME_IMAGE .
+sudo docker build -f ./Dockerfile --build-arg neuware_version=${neuware_version} -t $NAME_IMAGE .
 #2.save image
 echo "====================== save image ======================"
-docker save -o $FILENAME_IMAGE $NAME_IMAGE
+sudo docker save -o $FILENAME_IMAGE $NAME_IMAGE
 ls -la $FILENAME_IMAGE

@@ -1,6 +1,6 @@
 # easydk Docker Images #
 
-Build docker images for [easydk](https://github.com/Cambricon/CNStream/tree/master/easydk).
+Build docker images for [easydk](https://github.com/Cambricon/easydk).
 
 ## Directory tree ##
 
